@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>BUDGET</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-6" style="border: solid hsl(178, 100%, 50%);">
+                <form id="formadd" class="py-4">
+                    <h5>Veuillez Entrer Votre Budget</h5>
+                    <div class="mb-3">
+                      <input type="number" class="form-control" id="budgetAdd">
+                    </div>
+                    <button type="submit" class="btn btn-outline-info">Calculer</button>
+                </form>
+            </div>
+            <div class="row col-lg-6 text-center py-2">
+                <div class="col-4">
+                    <h2>BUDGET</h2>
+                    <h1 style="color: hsl(178, 100%, 50%);"> <span id="add">0</span> $</h1>
+                </div>
+                <div class="col-4">
+                    <h2>DÉPENSES</h2>
+                    <h1 style="color: red;"> <span id="retrait">0</span> $</h1>
+                </div>
+                <div class="col-4">
+                    <h2>SOLDE</h2>
+                    <h1> <span id="reste">0</span> $</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-lg-6" style="border: solid rgb(255, 0, 0);">
+            <!--Depense form-->
+                <form class="py-4" onsubmit="soumettre()">
+                    <div class="mb-3">
+                        <label for="depenseLib">Veuillez Saisir Vos Dépenses</label>
+                        <input type="text" class="form-control" id="depenseLib">
+                    </div>
+                    <div class="mb-3">
+                        <label for="depenseMon">Veuillez Entrer Le Montant Des Dépenses</label>
+                        <input type="number" class="form-control" id="depenseMon">
+                    </div>
+                    <button type="submit" onclick="soumettre()" class="btn btn-outline-danger"><i class="bi bi-check-lg"></i>Ajouter Une Dépense </button>
+                </form>
+            </div>
+            <div class="row col-lg-6 text-center py-2">
+                <table class="list" id="tablist">
+                    <thead>
+                        <tr>
+                            <th>Titre De La Dépense</th>
+                            <th>Valeur De Dépense</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
